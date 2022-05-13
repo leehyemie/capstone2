@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import 'antd/dist/antd.css'
+import SearchContainer from './Container/SearchContainer';
+import MaterialTable from './MaterialTable'
+import Review from './Container/Review';
+import ReviewTable from './Container/reviewTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(){
+    return (
+    <div>
+        <div>
+            <SearchContainer />   
+                         
+        </div>
+        <div className="App">
+            <MaterialTable />
+        </div>
     </div>
-  );
+    );
 }
 
 export default App;
