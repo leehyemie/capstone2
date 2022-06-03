@@ -10,8 +10,7 @@ function App(){
     return (
     <div>
         <div>
-            <SearchContainer />   
-                         
+            <SearchContainer />                            
         </div>
         <div className="App">
             <MaterialTable />
