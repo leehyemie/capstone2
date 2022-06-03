@@ -1,12 +1,11 @@
 import React from 'react';
 import { Input } from 'antd';
+import Check from './Category';
 const { Search } = Input;
 
-// function handleClick(e) {
-//     window.location.href = "/result"
-// }
 
 const SearchContainer = () => {
+    
     return (
         <div style={{ display: 'flex', justifyContent: 'center', padding: '3rem'}}>
             <Search
@@ -16,14 +15,16 @@ const SearchContainer = () => {
                 size="large"
                 //onSearch={(value) => console.log(value)}
                 onSearch={(value) => {
-                    window.location.href = "/result";
+                    //this.searchSpace(value)
                     console.log(value);
                 }}
                 //onClick={clickMe}
                 style={{ width: 650}}
-            />  
+            />
+            <Check />  
+            
         </div>
-        
+      
     );
 };
 
