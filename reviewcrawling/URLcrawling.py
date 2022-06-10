@@ -21,9 +21,11 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 naver_url = "https://map.naver.com/"
 
-df = pd.read_csv('C:\\Users\\Jongwan\\pythonnn\\관악구모범.csv', encoding='cp949') 
+#읽어올 파일 설정
+df = pd.read_csv('C:\\Users\\Jongwan\\pythonnn\\', encoding='cp949') 
 df['naver_map_url'] = '' 
 driver = webdriver.Chrome("C:/Users/Jongwan/chromedriver.exe", chrome_options = options)
+
 
 for i, keyword in enumerate(df['업소명'].tolist()): 
     print("이번에 찾을 키워드 :", i, f"/ {df.shape[0]} 행", keyword) 
@@ -32,7 +34,7 @@ for i, keyword in enumerate(df['업소명'].tolist()):
     
 
     try: 
-        naver_map_search_url = f'https://map.naver.com/v5/search/{keyword}%2B관악+/place'
+        naver_map_search_url = f'https://map.naver.com/v5/search/{keyword}+/place'
         #검색 url
 
         driver.get(naver_map_search_url) 
@@ -77,4 +79,6 @@ for i, keyword in enumerate(df['업소명'].tolist()):
     except IndexError: 
         df['naver_map_url'][i]= '' 
         print('none') 
-    df.to_csv('관악구모범url.csv', encoding = 'utf-8-sig')
+        
+    #저장할 파일명 설정
+    df.to_csv('', encoding = 'utf-8-sig')
