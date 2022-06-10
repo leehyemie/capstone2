@@ -70,9 +70,9 @@ for i, keyword in enumerate(df['업소명'].tolist()):
         curl = driver.current_url 
  
         time.sleep(1)
-        res_code = re.findall(r"place/(\d+)", curl) 
-        print('rescode', res_code)
-        final_url = 'https://pcmap.place.naver.com/restaurant/'+res_code[0]+'/review/visitor#' 
+        restaurant_number = re.findall(r"place/(\d+)", curl) 
+        print('restaurant_number', restaurant_number)
+        final_url = 'https://pcmap.place.naver.com/restaurant/'+restaurant_number[0]+'/review/visitor#' 
         print(final_url) 
         df['naver_map_url'][i]=final_url
 
@@ -81,4 +81,4 @@ for i, keyword in enumerate(df['업소명'].tolist()):
         print('none') 
         
     #저장할 파일명 설정
-    df.to_csv('', encoding = 'utf-8-sig')
+    df.to_csv('입력', encoding = 'utf-8-sig')
